@@ -1,37 +1,42 @@
-# bestfy-mcp
+# Bestfy MCP Server
 
-MCP Server para a API de pagamentos da [Bestfy](https://bestfy.io). Permite gerenciar pagamentos, transações, estornos, rastreio de entregas e saldo diretamente via Claude, Cursor, Windsurf e outros clientes MCP.
+Um servidor MCP (Model Context Protocol) para integração com a API da [Bestfy](https://bestfy.io), permitindo gerenciar pagamentos, transações, estornos, rastreio de entregas e saldo diretamente através de assistentes de IA como Claude e Cursor.
 
-## Instalação
+## O que você pode fazer
+
+- **Criar pagamentos**: PIX, Cartão de Crédito e Boleto
+- **Gerenciar transações**: Listar, buscar detalhes e estornar
+- **Rastreio de entregas**: Atualizar status de envio de produtos físicos
+- **Consultar saldo**: Saldo disponível e reservado da empresa
+- **Validar API Key**: Verificar se a chave está correta e ver dados da empresa
+
+## Instalação e Configuração
+
+### 1. Clone o repositório
 
 ```bash
-npm install -g bestfy-mcp
+git clone https://github.com/bestfy/mcp-bestfy.git
+cd mcp-bestfy
+npm install
+npm run build
 ```
 
-Ou use diretamente via `npx`:
+### 2. Configure no Claude Desktop
 
-```bash
-npx bestfy-mcp
-```
+Abra o arquivo de configuração `claude_desktop_config.json`:
 
-## Configuração
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+- **Linux**: `~/.config/Claude/claude_desktop_config.json`
 
-### Variável de ambiente
-
-| Variável | Obrigatória | Descrição |
-|----------|-------------|-----------|
-| `BESTFY_API_KEY` | Sim | Sua API key da Bestfy |
-
-### Claude Desktop
-
-Adicione ao seu arquivo de configuração (`claude_desktop_config.json`):
+Adicione a configuração:
 
 ```json
 {
   "mcpServers": {
     "bestfy": {
-      "command": "npx",
-      "args": ["-y", "bestfy-mcp"],
+      "command": "node",
+      "args": ["/caminho/completo/para/mcp-bestfy/dist/index.js"],
       "env": {
         "BESTFY_API_KEY": "sua-api-key-aqui"
       }
@@ -40,7 +45,7 @@ Adicione ao seu arquivo de configuração (`claude_desktop_config.json`):
 }
 ```
 
-### Cursor
+### 3. Configure no Cursor
 
 Adicione ao `.cursor/mcp.json` do seu projeto ou nas configurações globais:
 
@@ -48,8 +53,8 @@ Adicione ao `.cursor/mcp.json` do seu projeto ou nas configurações globais:
 {
   "mcpServers": {
     "bestfy": {
-      "command": "npx",
-      "args": ["-y", "bestfy-mcp"],
+      "command": "node",
+      "args": ["/caminho/completo/para/mcp-bestfy/dist/index.js"],
       "env": {
         "BESTFY_API_KEY": "sua-api-key-aqui"
       }
@@ -57,6 +62,14 @@ Adicione ao `.cursor/mcp.json` do seu projeto ou nas configurações globais:
   }
 }
 ```
+
+**Importante**: Substitua `/caminho/completo/para/mcp-bestfy/` pelo caminho real onde você clonou o repositório.
+
+## Como obter sua API Key
+
+1. Acesse [Bestfy](https://bestfy.io)
+2. Vá em **Configurações** → **API Keys**
+3. Copie sua API Key
 
 ## Tools disponíveis
 
@@ -89,13 +102,30 @@ Adicione ao `.cursor/mcp.json` do seu projeto ou nas configurações globais:
 
 ## Exemplos de uso
 
-Depois de configurado, você pode pedir ao Claude coisas como:
+### Criar um pagamento PIX
+```
+"Crie um pagamento PIX de R$ 50,00 para o cliente João, email joao@email.com, CPF 12345678901"
+```
 
-- "Crie um pagamento PIX de R$ 50,00 para o cliente João"
-- "Liste as transações pagas de hoje"
-- "Qual o saldo disponível da minha conta?"
-- "Estorne a transação 01JXYZ..."
-- "Atualize o rastreio da transação para SHIPPED com código AB123456789BR"
+### Consultar transações
+```
+"Liste as transações pagas de hoje"
+```
+
+### Verificar saldo
+```
+"Qual o saldo disponível da minha conta?"
+```
+
+### Estornar uma transação
+```
+"Estorne a transação 01JXYZ..."
+```
+
+### Atualizar rastreio
+```
+"Atualize o rastreio da transação para SHIPPED com código AB123456789BR"
+```
 
 ## Desenvolvimento
 
@@ -112,7 +142,3 @@ npm run dev
 # Rodar localmente
 BESTFY_API_KEY=sua-key node dist/index.js
 ```
-
-## Licença
-
-MIT
