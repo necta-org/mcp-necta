@@ -1,6 +1,6 @@
 {
   "name": "bestfy-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP Server for Bestfy payment API - manage payments, transactions, refunds, tracking and balance",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +16,15 @@
     "dev": "tsc --watch",
     "prepublishOnly": "npm run build"
   },
-  "keywords": ["mcp", "bestfy", "payments", "pix", "credit-card", "boleto", "model-context-protocol"],
+  "keywords": [
+    "mcp",
+    "bestfy",
+    "payments",
+    "pix",
+    "credit-card",
+    "boleto",
+    "model-context-protocol"
+  ],
   "author": "",
   "license": "MIT",
   "engines": {
