@@ -3,7 +3,7 @@ import { z } from "zod";
 import { makeRequest } from "../utils/api.js";
 import { formatHttpError } from "../utils/errors.js";
 import { formatCurrency } from "../utils/formatters.js";
-
+                               
 export function registerCompanyTools(server: McpServer) {
   server.tool(
     "getBalance",
