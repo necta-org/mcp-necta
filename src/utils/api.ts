@@ -12,7 +12,7 @@ export async function makeRequest<T = unknown>(options: RequestOptions): Promise
   const { method, path, body, query, headers } = options;
 
   if (!config.apiKey) {
-    throw new Error("BESTFY_API_KEY is not configured. Set the BESTFY_API_KEY environment variable.");
+    throw new Error("NECTA_API_KEY is not configured. Set the NECTA_API_KEY environment variable.");
   }
 
   const url = new URL(path, config.apiUrl);

@@ -5,7 +5,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { registerAllTools } from "./tools/index.js";
 
 const server = new McpServer({
-  name: "bestfy-mcp",
+  name: "necta-mcp",
   version: "1.0.0",
 });
 

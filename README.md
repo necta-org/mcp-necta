@@ -56,7 +56,7 @@ Adicione ao `.cursor/mcp.json` do seu projeto ou nas configurações globais:
       "command": "node",
       "args": ["/caminho/completo/para/mcp-necta/dist/index.js"],
       "env": {
-        "necta_API_KEY": "sua-api-key-aqui"
+        "NECTA_API_KEY": "sua-api-key-aqui"
       }
     }
   }

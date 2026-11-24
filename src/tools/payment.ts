@@ -7,7 +7,7 @@ import { formatCurrency } from "../utils/formatters.js";
 export function registerPaymentTools(server: McpServer) {
   server.tool(
     "createPayment",
-    "Cria um pagamento na Bestfy. Suporta PIX, Cartao de Credito e Boleto. Retorna dados da transacao incluindo QR Code (PIX) ou link de pagamento.",
+    "Cria um pagamento na Necta. Suporta PIX, Cartao de Credito e Boleto. Retorna dados da transacao incluindo QR Code (PIX) ou link de pagamento.",
     {
       paymentMethod: z.enum(["PIX", "CREDIT_CARD", "BOLETO"]).describe("Metodo de pagamento"),
       items: z.array(z.object({

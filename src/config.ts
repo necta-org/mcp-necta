@@ -1,4 +1,4 @@
 export const config = {
-  apiKey: process.env.BESTFY_API_KEY || "",
-  apiUrl: "https://api.bestfy.io",
+  apiKey: process.env.NECTA_API_KEY || "",
+  apiUrl: "https://api.necta.com.br",
 };
