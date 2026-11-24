@@ -38,7 +38,7 @@ Adicione a configuração:
       "command": "node",
       "args": ["/caminho/completo/para/mcp-necta/dist/index.js"],
       "env": {
-        "necta_API_KEY": "sua-api-key-aqui"
+        "NECTA_API_KEY": "sua-api-key-aqui"
       }
     }
   }
