@@ -15,7 +15,7 @@ Um servidor MCP (Model Context Protocol) para integração com a API da [Necta](
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/necta/mcp-necta.git
+git clone https://github.com/necta-org/mcp-necta.git
 cd mcp-necta
 npm install
 npm run build
