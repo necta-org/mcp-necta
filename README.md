@@ -1,6 +1,6 @@
-# Bestfy MCP Server
+# Necta MCP Server
 
-Um servidor MCP (Model Context Protocol) para integração com a API da [Bestfy](https://bestfy.io), permitindo gerenciar pagamentos, transações, estornos, rastreio de entregas e saldo diretamente através de assistentes de IA como Claude e Cursor.
+Um servidor MCP (Model Context Protocol) para integração com a API da [Necta](https://necta.com.br), permitindo gerenciar pagamentos, transações, estornos, rastreio de entregas e saldo diretamente através de assistentes de IA como Claude e Cursor.
 
 ## O que você pode fazer
 
