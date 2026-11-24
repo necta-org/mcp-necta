@@ -15,8 +15,8 @@ Um servidor MCP (Model Context Protocol) para integração com a API da [Necta](
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/bestfy/mcp-bestfy.git
-cd mcp-bestfy
+git clone https://github.com/necta/mcp-necta.git
+cd mcp-necta
 npm install
 npm run build
 ```
@@ -34,11 +34,11 @@ Adicione a configuração:
 ```json
 {
   "mcpServers": {
-    "bestfy": {
+    "necta": {
       "command": "node",
-      "args": ["/caminho/completo/para/mcp-bestfy/dist/index.js"],
+      "args": ["/caminho/completo/para/mcp-necta/dist/index.js"],
       "env": {
-        "BESTFY_API_KEY": "sua-api-key-aqui"
+        "necta_API_KEY": "sua-api-key-aqui"
       }
     }
   }
@@ -52,22 +52,22 @@ Adicione ao `.cursor/mcp.json` do seu projeto ou nas configurações globais:
 ```json
 {
   "mcpServers": {
-    "bestfy": {
+    "necta": {
       "command": "node",
-      "args": ["/caminho/completo/para/mcp-bestfy/dist/index.js"],
+      "args": ["/caminho/completo/para/mcp-necta/dist/index.js"],
       "env": {
-        "BESTFY_API_KEY": "sua-api-key-aqui"
+        "necta_API_KEY": "sua-api-key-aqui"
       }
     }
   }
 }
 ```
 
-**Importante**: Substitua `/caminho/completo/para/mcp-bestfy/` pelo caminho real onde você clonou o repositório.
+**Importante**: Substitua `/caminho/completo/para/mcp-necta/` pelo caminho real onde você clonou o repositório.
 
 ## Como obter sua API Key
 
-1. Acesse [Bestfy](https://bestfy.io)
+1. Acesse [Necta](https://app.necta.com.br)
 2. Vá em **Configurações** → **API Keys**
 3. Copie sua API Key
 
@@ -140,5 +140,5 @@ npm run build
 npm run dev
 
 # Rodar localmente
-BESTFY_API_KEY=sua-key node dist/index.js
+NECTA_API_KEY=sua-key node dist/index.js
 ```
